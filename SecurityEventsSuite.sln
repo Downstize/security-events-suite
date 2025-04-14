@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{CFA7ABF2-5092-41C8-8DB8-B1498093192D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processor", "Processor\Processor.csproj", "{6C9FCCFD-626B-421D-B2E9-0DE4983B9064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA7ABF2-5092-41C8-8DB8-B1498093192D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA7ABF2-5092-41C8-8DB8-B1498093192D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA7ABF2-5092-41C8-8DB8-B1498093192D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA7ABF2-5092-41C8-8DB8-B1498093192D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9FCCFD-626B-421D-B2E9-0DE4983B9064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9FCCFD-626B-421D-B2E9-0DE4983B9064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9FCCFD-626B-421D-B2E9-0DE4983B9064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9FCCFD-626B-421D-B2E9-0DE4983B9064}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

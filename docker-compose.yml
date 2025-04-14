@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: incidents_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: incidents_db
+    ports:
+      - "6432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "user", "-d", "incidents_db"]
+      interval: 5s
+      retries: 5
+      timeout: 3s
+
+  processor:
+    build:
+      context: .
+      dockerfile: Processor/Dockerfile
+    container_name: processor
+    ports:
+      # В контейнере processor у нас EXPOSE указан на порту 80, его можно отобразить на локальный порт (например, 5129)
+      - "5129:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  generator:
+    build:
+      context: .
+      dockerfile: Generator/Dockerfile
+    container_name: generator
+    ports:
+      # Здесь можно отобразить порт, который используется приложением (например, если Generator слушает на 80 или 7018)
+      - "7018:80"
+    depends_on:
+      processor:
+        condition: service_started
+
+networks:
+  mynetwork:
+
+volumes:
+  postgres_data:
